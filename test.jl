@@ -125,7 +125,7 @@ for i = 1:n
 
 end
 
-println(k[total1])
+println("The probability of maintaining a dissolved oxygen concentration above 4 mg/L is ", round((1-p[total1])*100, digits = 2), "%")
 plot(k)
 
 #Q7
@@ -146,7 +146,7 @@ for i = 1:n
 
 end
 
-println(p[total2])
+println("The probability of maintaining a dissolved oxygen concentration above 4 mg/L is ", round((1-p[total2])*100, digits = 2), "%")
 plot(p)
 
 diff = zeros(n^2)
@@ -154,5 +154,5 @@ for i = 1:length(p)
    diff[i] = k[i]-p[i]
 end
 
-println(diff[total])
+println(diff[total2])
 plot(diff)

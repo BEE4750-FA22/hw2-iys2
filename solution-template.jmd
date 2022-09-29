@@ -136,7 +136,8 @@ println(t)
 The minimum level of treatment for both streams is 7.5%. 
 
 ## Problem 1.5
-
+With no other information, treating both streams equally seems like the more equaitable approach since both stream are contributing to the pollution of the river. 
+However, to make a more informed deicision, the cost of treating each stream should be taken into account. Additionally, the feasibiliy of treatment should be considered for each option. For example, if there is not enough space for a new treatment facility at one waste stream, the other should be preferred. To make it more equitable in this scenario, the waste stream that is not beging treated could contribute in the cost of treating the other stream. 
 ## Problem 1.6
 ```julia; echo=false
 # This block will not show up in compiled output.
@@ -175,7 +176,7 @@ for i = 1:n
 
 end
 
-println(k[total1])
+println("The probability of maintaining a dissolved oxygen concentration above 4 mg/L is ", round((1-k[total1])*100, digits = 2), "%")
 plot(k)
 
 ```
@@ -199,13 +200,23 @@ for i = 1:n
 
 end
 
-println(p[total2])
+println("The probability of maintaining a dissolved oxygen concentration above 4 mg/L is ", round((1-p[total2])*100, digits = 2), "%")
 plot(p)
 ```
 
 
 ## Problem 1.8
 
-```
+Uncertainty and depdendency introduces a risk that, even with the treatment outlined above, the regulation of 4 mg/L may still not be met. With about 30% chance of failiure, the treatment strategy would certainly need to be changed. 
+I would probably redefine the treatment amount, (changing the amount of CBOD and NBOD removed individually in each stream), until the percent change of risk reaches a suitable threshold. For example, the regulaiton is met 95% of the time. In reality, the CBOD and NBOD values are probably not uniformly distributed and a better distribution could be found, most likely through empirical data. 
+However, to create a more accurate model the uncertainty and depdency of all variables would need to be considered. For example, the river and waste flows may vary depending on rainfall and the CBOD and NBOD levels in each stream could be correlated.   
+
 
 # References
+
+
+1. Getting rounded value of a number in Julia, Geeks for geeks, 
+https://www.geeksforgeeks.org/getting-rounded-value-of-a-number-in-julia-round-method/
+
+2. Scopes of Variables, Julia Manual, 
+https://docs.julialang.org/en/v1/manual/variables-and-scoping/
